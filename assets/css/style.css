@@ -1,0 +1,274 @@
+:root {
+    --white: #e0e0e0;
+    --grey: #959595;
+    --black: #473335;
+    --black-opaque: rgba(71, 51, 53, 0.5);
+    --navy-blue: #2b4162;
+    --blue-print: #054a91;
+    --red: #721817;
+    --blue: #65afff;
+    --blue-opaque: rgba(101, 175, 255, 0.25);
+    --yellow: #fa9f42;
+    --green: #0b6e4f;
+    --orange: #f17300;
+    --violet: #aa78a6;
+    --side-margin: 0.5rem;
+}
+
+@font-face {
+    font-family: page-font;
+    src: url(../fonts/New\ Telegraph.ttf)
+}
+
+@font-face {
+    font-family: page-bold-font;
+    src: url(../fonts/New\ Telegraph\ Bold.ttf)
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(12rem, 1.2fr) 3.8fr;
+    grid-template-rows: 0.5fr 4.5fr;
+    height: 100vh;
+    background-color: var(--white);
+    font-family: page-font;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    background-color: var(--navy-blue);
+    display: grid;
+    grid-template-rows: 1fr repeat(15, 1fr);
+    justify-content: stretch;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.sidebar a {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-family: page-bold-font;
+    margin-left: var(--side-margin);
+    grid-row: 1 / 2;
+}
+
+.sidebar > div {
+    padding: 0.5rem 0;
+    color: var(--grey);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar > div:hover {
+    border-left: 2px solid var(--white);
+    background-color: var(--blue-opaque);
+}
+
+.sidebar > * > a {
+    color: var(--grey);
+    font-size: 0.8rem;
+}
+
+.sidebar > * > a > i {
+    margin-right: 1rem;
+}
+
+.sidebar .settings {
+    grid-row: 15 / 16;
+}
+
+.sidebar .subscription {
+    grid-row: 16 / 17;
+}
+
+.nav {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+    padding: 0;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav > * {
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+}
+
+.nav .searchbar {
+    position: relative;
+    width: 100%;
+    line-height: 0.5rem;
+}
+
+.nav .searchbar input {
+    width: 5%;
+    height: 3rem;
+    background: none;
+    font-size: 1.5rem;
+    border: none;
+    opacity: 0;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.nav .searchbar label {
+    position: absolute;
+    color: var(--black);
+    font-size: 1.5rem;
+    pointer-events: none;
+    right: calc(100% - 5% - 0.3rem);
+    top: 0.8rem;
+    transition: right 0.3s ease-in-out;
+}
+
+.nav .searchbar input:focus {
+    width: 50%;
+    opacity: 1;
+    outline: 2px solid var(--black);
+}
+
+.nav .searchbar input:focus+label {
+    right: calc(100% - 50% - 0.1rem);
+}
+
+.nav > * > a {
+    margin-top: var(--side-margin);
+    margin-bottom: var(--side-margin);
+    color: var(--black);
+    transition: box-shadow .3s ease-in-out;
+}
+
+.nav .user:hover {
+    box-shadow: 0 0 10px 0 var(--yellow) inset, 0 0 20px 2px var(--yellow);
+}
+
+.nav .user {
+    padding: 0.5rem;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+}
+
+.content,
+.content-tall {
+    grid-column: 2 / 3;
+    grid-row: 2 /3;
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.content {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-tall {
+    grid-template-columns: 1fr;
+}
+
+.content > div.bubble,
+.content-tall > div.bubble {
+    box-shadow: 0.25rem 0.25rem var(--black-opaque);
+    background-color: var(--blue-opaque);
+}
+
+.projects > div.bubble,
+.statistics > div.bubble,
+.announcements > div.bubble {
+    padding-left: 0.5rem;
+    background-color: var(--blue-opaque);
+}
+
+p {
+    font-size: 0.75rem;
+}
+
+.content > div.bubble,
+.content-tall > div.bubble,
+.projects > div.bubble,
+.statistics > div.bubble,
+.announcements > div.bubble {
+    margin: 0.25rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content > div.bubble:hover,
+.content-tall > div.bubble:hover,
+.projects > div.bubble:hover,
+.statistics > div.bubble:hover,
+.announcements > div.bubble:hover {
+    transform: translateY(-0.25rem);
+}
+
+button {
+    font-size: 2rem;
+    line-height: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--blue-print);
+}
+
+.projects {
+    position: relative;
+}
+
+#button-holder-1,
+#button-holder-2 {
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.1rem;
+}
+
+.announcements {
+    grid-row: 1 / 2;
+}
+
+h1 {
+    margin-left: var(--side-margin);
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.todos {
+    position: relative;
+}
+
+.todos ul > li {
+    list-style-type: none;
+}
+
+.todos button {
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.1rem;
+}
+
+.footer,
+.footer-tall {
+    color: var(--white);
+    font-size: 1.25rem;
+    background-color: var(--blue-print);
+    align-self: stretch;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer {
+    grid-column: 1 / 3;
+}

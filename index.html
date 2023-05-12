@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Project - Dashboard Project</title>
+    <script src="https://kit.fontawesome.com/9c11ce4a9b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./assets/js/data.js" defer></script>
+    <script src="./assets/js/layout.js" defer></script>
+    <link href="./assets/css/normalise.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href=""><i class="fa-solid fa-road"></i> Dashboard</a>
+            <div class="quick-projects">
+                <a href=""><i class="fa-solid fa-shapes"></i> Projects</a>
+            </div>
+            <div class="quick-ideas">
+                <a href=""><i class="fa-solid fa-lightbulb"></i> Ideas</a>
+            </div>
+            <div class="quick-studies">
+                <a href=""><i class="fa-solid fa-chalkboard"></i> Studies</a>
+            </div>
+            <div class="quick-analytics">
+                <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i> Analytics</a>
+            </div>
+            <div class="quick-references">
+                <a href=""><i class="fa-solid fa-book"></i> References</a>
+            </div>
+            <div class="settings">
+                <a href=""><i class="fa-solid fa-hammer"></i> Settings</a>
+            </div>
+            <div class="subscription">
+                <a href=""><i class="fa-solid fa-money-bill-wave"></i> Subscriptions</a>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="searchbar">
+                <input type="text" id="search" placeholder="Search"/>
+                <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+            </div>
+            <div class="notifications">
+                <a href=""><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="user">
+                <a href=""><i class="fa-solid fa-dove"></i></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="projects bubble">
+                Projects
+                <div id="button-holder-1">
+                    <button class="add">+</button>
+                    <button class="remove">-</button>
+                </div>
+                <div id="button-holder-2">
+                    <button class="confirm"><i class="fa-solid fa-check"></i></button>
+                    <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="announcements bubble">
+                <h1><i class="fa-solid fa-map-pin"></i> Bulletins</h1>
+            </div>
+            <div class="todos bubble">
+                <h1>To Do List</h1>
+                <ul class="todo-list"></ul>
+                <button class="todo">+</button>
+            </div>
+            <div class="statistics bubble">
+                <h1>Analytics</h1>
+            </div>
+            <div class="footer">
+                Yona Sandt &#169; 2023
+            </div>
+        </div>
+    </div>
+</body>
+</html>
